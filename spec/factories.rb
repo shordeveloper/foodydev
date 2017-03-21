@@ -1,11 +1,11 @@
-FactoryGirl.define do  
+FactoryGirl.define do
 
   factory :group_member do
     Group_id {Group.last.nil? ? create(:group).id : Group.last.id}
     sequence(:phone_number) { |n| "054668468#{n}"}
     name "MyString"
   end
-  
+
 
   factory :group do
     user_id {User.last.nil? ?  create(:user).id : User.last.id}
@@ -21,7 +21,7 @@ FactoryGirl.define do
   	latitude 9.99
   	longitude 9.99
   	starting_date  {1.day.ago.to_i}
-  	ending_date  {1.day.from_now.to_i} 
+  	ending_date  {1.day.from_now.to_i}
   	contact_info "MyText"
   	is_on_air true
   	active_device_dev_uuid "a0912a2f2c1a31fc"
@@ -46,7 +46,7 @@ FactoryGirl.define do
 
   	trait :android do
   		is_ios false
-		  remote_notification_token "dLt-nR0QfBg:APA91bECl81HuSDZ7AyYOnsyb9EpoGQ71N16bwfzla5I4eq5McjYyt-qVXy1fkVCZ0vlTPxzfVo5dgEqqItUsYJzjCd9wl9qLpZydw4VUZf2nYCVezAl7gJBq_S-ky77tiCp5MK6KX9L"
+		  remote_notification_token "AIzaSyAa1_-biaeeGsp7oINy_2ngh08WB4VOGqI"
 	    dev_uuid "a0912a2f2c1a31fc"
 	  end
   end
@@ -56,7 +56,7 @@ FactoryGirl.define do
     identity_provider_user_id "facebookuseridkeyisverylong"
     identity_provider_token "facebooktokenkey"
     phone_number "0546684680"
-    identity_provider_email {Time.now.to_i.to_s + "@mail.com"} 
+    identity_provider_email {Time.now.to_i.to_s + "@mail.com"}
     identity_provider_user_name "guy free"
     is_logged_in true
     active_device_dev_uuid "justOnethatdoesnotexist"
@@ -78,5 +78,5 @@ FactoryGirl.define do
     report "testttttt"
   end
 
-  
+
 end
